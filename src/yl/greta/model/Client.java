@@ -1,17 +1,19 @@
 package yl.greta.model;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Client {
+public class Client implements Serializable, Comparator {
     private String nom;
     private String prenom;
     private String identifiant; // 6 chiffres : stocker en String pour garder zéros devant
     private Map<Timestamp, Livre> emprunts = new HashMap<>();
 
-    public Client(String nom, String prenom, String identifiant) {
-        this.nom = nom; this.prenom = prenom; this.identifiant = identifiant;
+    public Client(String nom, String prenom, String identifiant, Bibliotheque client) {
+        this.nom = nom; this.prenom = prenom; this.identifiant = identifiant; client.ajouterClient(this);
     }
 
     public void emprunter(Timestamp date, Livre livre) {
@@ -54,13 +56,16 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client{" +
+        return   "\'" +identifiant + '\'' +
                 "nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
-                ", identifiant='" + identifiant + '\'' +
                 ", emprunts=" + emprunts +
-                '}';
+                '}'+ "\n";
     }
 
+    @Override
+    public int compare(Object o1, Object o2) {
+        return 0;
+    }
 }
 

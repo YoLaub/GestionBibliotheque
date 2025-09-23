@@ -9,7 +9,6 @@ public class Livre implements Serializable, Comparable {
     private  String auteur;
     private String editeur;
     private LocalDate dateSortie;
-    private Bibliotheque stock;
 
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 

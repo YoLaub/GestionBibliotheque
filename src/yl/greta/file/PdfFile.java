@@ -45,7 +45,7 @@ public class PdfFile implements Fichier {
 
     @Override
     public void writeFile() throws IOException, ClassNotFoundException {
-        String nomFichierEntrée = "backup" + File.separator + "backup.bin";
+        String nomFichierEntrée = "backup" + File.separator + "stock.bin";
 
         // 1. Lire la liste des livres depuis le fichier binaire
         ArrayList<Livre> livres;
