@@ -16,7 +16,7 @@
  * AppConfig config = mapper.readValue(new File("config.json"), AppConfig.class);
  * </pre>
  *
- * @author [Votre Nom]
+ * @author [Yoann Laubert]
  * @version 1.0
  * @since 2025-09-24
  * @see com.fasterxml.jackson.annotation.JsonProperty
@@ -48,7 +48,7 @@ public class AppConfig {
     private String to;
 
     /**
-     * Clé d'API pour accéder à un service externe (ex: SendGrid, Mailgun).
+     *
      * <p><b>Sécurité :</b> Ne jamais exposer cette clé en clair dans les logs.</p>
      */
     private String apiKey;

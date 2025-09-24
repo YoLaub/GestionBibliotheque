@@ -1,5 +1,12 @@
 package yl.greta.model;
 
+/**
+ * Représente un utilisateur du système avec ses informations d'authentification.
+ * <p>
+ * Cette classe stocke les informations essentielles d'un utilisateur,
+ * notamment son identifiant (login) et son mot de passe haché pour des raisons de sécurité.
+ * </p>
+ */
 public class Utilisateur {
 
     private String login;

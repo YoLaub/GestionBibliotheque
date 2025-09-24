@@ -1,11 +1,19 @@
 package yl.greta.model;
-
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Représente un client d'une bibliothèque pouvant emprunter des livres.
+ * <p>
+ * Cette classe implémente {@link Serializable} pour la persistance des données
+ * et {@link Comparator} pour comparer les clients. Chaque client est identifié
+ * par un numéro à 6 chiffres (stocké sous forme de String pour préserver les zéros initiaux)
+ * et peut effectuer plusieurs emprunts de livres.
+ * </p>
+ */
 public class Client implements Serializable, Comparator {
     private String nom;
     private String prenom;
@@ -62,6 +70,7 @@ public class Client implements Serializable, Comparator {
                 ", emprunts=" + emprunts +
                 '}'+ "\n";
     }
+
 
     @Override
     public int compare(Object o1, Object o2) {

@@ -1,9 +1,16 @@
 package yl.greta.model;
-
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Représente un livre avec ses métadonnées et ses informations de publication.
+ * <p>
+ * Cette classe implémente {@link Serializable} pour permettre la sauvegarde
+ * et {@link Comparable} pour le tri des livres. Chaque instance est automatiquement
+ * ajoutée à une bibliothèque lors de sa création.
+ * </p>
+ */
 public class Livre implements Serializable, Comparable {
     private String titre;
     private  String auteur;
@@ -61,6 +68,19 @@ public class Livre implements Serializable, Comparable {
                 '}' + "\n";
     }
 
+
+    /**
+     * Compare ce livre à un autre pour le tri.
+     * <p>
+     * <strong>Note:</strong> L'implémentation actuelle retourne toujours 0.
+     * Cette méthode devrait être redéfinie pour fournir un tri significatif,
+     * par exemple par titre, auteur ou date de sortie.
+     * </p>
+     *
+     * @param o le livre à comparer
+     * @return 0 dans l'implémentation actuelle
+     * @throws ClassCastException si l'objet n'est pas un Livre
+     */
     @Override
     public int compareTo(Object o) {
         return 0;

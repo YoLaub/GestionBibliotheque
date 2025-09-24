@@ -17,6 +17,29 @@ import java.util.Base64;
 import java.util.List;
 import java.util.Properties;
 
+/**
+ * Utilitaire pour l'envoi d'emails transactionnels via l'API Brevo (ex-Sendinblue).
+ * <p>
+ * Cette classe permet d'envoyer des emails avec pièces jointes en utilisant
+ * les services de Brevo. Elle charge la configuration depuis un fichier JSON
+ * et gère l'envoi d'emails avec un template HTML personnalisé.
+ * </p>
+ * <p>
+ * <strong>Configuration requise:</strong>
+ * Un fichier conf/conf.json doit exister avec les propriétés suivantes:
+ * <ul>
+ *   <li>apiKey: Clé API Brevo</li>
+ *   <li>sender: Adresse email de l'expéditeur</li>
+ *   <li>to: Adresse email du destinataire</li>
+ *   <li>template: Contenu HTML du template</li>
+ * </ul>
+ * </p>
+ * <p>
+ * <strong>Prérequis:</strong>
+ * Le fichier "state_of_the_day.pdf" doit être présent dans le répertoire courant
+ * pour être joint à l'email.
+ * </p>
+ */
 public class EmailBrevo {
     private String sender;
     private String to;
