@@ -88,4 +88,9 @@ public class PdfFile implements Fichier {
         }
     }
 
+    @Override
+    public void sendFile() throws IOException {
+
+    }
+
 }

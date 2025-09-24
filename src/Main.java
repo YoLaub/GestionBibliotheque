@@ -8,6 +8,7 @@ import yl.greta.model.Livre;
 import yl.greta.task.SaveToPdfThread;
 import yl.greta.task.SavingBinaryTask;
 import yl.greta.task.sendEmailofState;
+import yl.greta.task.sendFTPThread;
 
 import java.io.IOException;
 import java.time.Instant;
@@ -133,6 +134,9 @@ public class Main {
                 System.out.println("Emprunté le " + new Date((Long) timestamp) + ": " + livre);
             });
         }
+
+        Thread ftpSend = new Thread(new sendFTPThread());
+        ftpSend.start();
 
 
 
